@@ -12,3 +12,4 @@ NkuRails::Application.routes.draw do
   resources :sessions
 
   root to: "students#index"
+end

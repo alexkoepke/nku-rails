@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140123135814) do
     t.string "nickname"
     t.string "email"
     t.string "image_url"
+    t.string "password_digest"
   end
 
 end
