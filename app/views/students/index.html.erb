@@ -2,6 +2,12 @@
   <div class="row">
     <h1 class="col-sm-8">Students
     </h1>
+     <div class="col-sm-8">
+      <%= link_to 'Login', new_student_path, class: 'btn btn-default pull-left' %>
+    </div>
+    <div class="col-sm-8" style="clear: left;">
+      <%= link_to 'Logout', new_student_path, class: 'btn btn-default pull-left' %>
+    </div>
     <div class="col-sm-4">
       <%= link_to 'Create a new student', new_student_path, class: 'btn btn-default pull-right' %>
     </div>
