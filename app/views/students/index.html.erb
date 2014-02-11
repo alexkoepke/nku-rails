@@ -3,10 +3,8 @@
     <h1 class="col-sm-8">Students
     </h1>
      <div class="col-sm-8">
-      <%= link_to 'Login', new_student_path, class: 'btn btn-default pull-left' %>
-    </div>
-    <div class="col-sm-8" style="clear: left;">
-      <%= link_to 'Logout', new_student_path, class: 'btn btn-default pull-left' %>
+       <span style="margin-right: 20px;"><%= link_to 'Login', new_student_path, class: 'btn btn-default pull-left' %></span>
+      <%= link_to 'Logout', new_student_path, class: 'btn btn-default' %>
     </div>
     <div class="col-sm-4">
       <%= link_to 'Create a new student', new_student_path, class: 'btn btn-default pull-right' %>
