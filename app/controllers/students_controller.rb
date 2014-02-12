@@ -7,6 +7,10 @@ class StudentsController < ApplicationController
     @student = Student.create!(student_params)
     redirect_to students_path, notice: "Successfully created #{@student.name}"
   end
+  
+  def show
+    edit and return #call the edit method inside of this controller
+  end
 
   def edit
     @student = Student.find(params[:id])
@@ -32,4 +36,5 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit!
   end
+  
 end
