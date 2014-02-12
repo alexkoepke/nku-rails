@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
 
   def edit
     @student = Student.find(params[:id])
-    if current_student == @student
+    if @student == current_student
       render :edit
     else
       redirect_to students_path, notice: "You do not have permission to edit #{@student.name}'s profile."
