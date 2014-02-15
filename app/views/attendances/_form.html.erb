@@ -1,0 +1,25 @@
+<div class="row col-sm-6">
+ 
+  <% if @attendance.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited
+      this attendance from being saved:</h2>
+    <ul>
+    <% @attendance.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+  <%= form_for @attendance do |a| %>
+    <div class="form-group">
+      <%= a.label :seat %>
+      <%= a.number_field :seat, class: 'form-control' %>
+    </div>
+
+    <%= a.submit submit_copy, class: 'btn btn-primary' %>
+    &nbsp;or
+    <%= link_to 'Cancel', students_path %>
+  <% end %>
+</div>
