@@ -18,6 +18,11 @@ class AttendancesController < ApplicationController
   end
   
   def create
+    if @student && @student == curent_student
+    
+    else 
+      redirect_to students_path, notice: 'You have to log in'
+    end
   end
   
   def edit

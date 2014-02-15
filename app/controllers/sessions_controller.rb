@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @student = Student.find_by_email(params[:email])
     if @student && @student.authenticate(params[:password])
       session[:student_id] = @student.id
-      redirect_to @student, notice: "Logged in as #{@student.name}"
+      redirect_to students_path, notice: "Logged in as #{@student.name}"
     else
       flash.now.alert = "Email or password is invalid"
       render "new"
