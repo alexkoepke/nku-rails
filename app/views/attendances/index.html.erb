@@ -7,4 +7,26 @@
   </div>
 </div>
 
-<%= render partial: 'form', locals: {submit_copy: 'Attending the class'} %>
+<%= form_for @attendance do |a| %>
+
+   <% if @attendance.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited
+      this attendance from being saved:</h2>
+    <ul>
+    <% @attendance.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p>
+    <%= a.label :seat %><br>
+    <%= a.text_field :seat %>
+  </p>
+
+  <p>
+    <%= a.submit %>
+  </p>
+<% end %>
