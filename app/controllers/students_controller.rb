@@ -4,6 +4,7 @@ class StudentsController < ApplicationController
   end
   
   def new
+    @student = Student.new
   end
   
   def create
@@ -13,7 +14,7 @@ class StudentsController < ApplicationController
     redirect_to @student
   end
   
-  def show
+  def edit
     @student = Student.find(params[:id])
   end
   

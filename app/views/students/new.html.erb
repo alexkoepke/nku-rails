@@ -27,6 +27,18 @@
   
   <div>
     <%= form_for :student, url: students_path do |f| %>
+      
+      <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+          <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
       <div class="form-group">
         <%= f.label :name, 'Name' %><br>
         <%= f.text_field :name, class: 'form-control' %>
@@ -51,5 +63,6 @@
         <%= f.submit %>
       </div>
     <% end %>
+    <%= link_to 'Cancel', students_path %>
   </div>
 </div>
