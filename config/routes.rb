@@ -3,7 +3,7 @@ NkuRails::Application.routes.draw do
     resources :comments
   end
   
-  resources :students, except: :edit
+  resources :students
 
   root "welcome#index"
 end

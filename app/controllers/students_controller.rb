@@ -25,6 +25,16 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
   
+  def update
+    @student = Student.find(params[:id])
+    
+    if @student.update(params[:student].permit(:name, :nickname, :email, :image_url))
+      redirect_to @student
+    else
+      render 'edit'
+    end
+  end
+  
   private
     def student_params
       params.require(:student).permit(:name, :nickname, :email, :image_url)
