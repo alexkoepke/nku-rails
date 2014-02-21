@@ -1,0 +1,65 @@
+<div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+       
+        <a href="./" class="navbar-brand">Alex Koepke</a>
+        
+        <button class="navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", controller: "welcome" %></li>
+            <li><%= link_to "My Blog", controller: "posts" %></li>
+            <li class="avtive"><%= link_to "Buller", controller: "students" %></li>
+          </ul>
+        
+        </div>
+        
+      </div>
+</div>
+
+<div class="container" id="content">
+  
+  <div class="row">
+    
+    <div class="col-sm-6">
+      <h1>Edit Profile</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+        <% if @post.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:
+            </h2>
+            <ul>
+              <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <p>
+          <%= f.label :title %><br>
+          <%= f.text_field :title %>
+        </p>
+ 
+        <p>
+          <%= f.label :text %><br>
+          <%= f.text_area :text %>
+        </p>
+       
+        <p>
+          <%= f.submit %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+</div>
