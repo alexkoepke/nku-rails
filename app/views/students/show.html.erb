@@ -23,17 +23,22 @@
 </div>
 
 <div class="container" id="content">
-  <h1>Students</h1>
-  <%= link_to "Sign Up!", new_student_path, class: 'btn btn-primary' %>
-  <% @students.each do |student| %>
-    <div class="info-block">
-      <p><%= student.name %></p>
-      <p><%= student.nickname %></p>
-      <p><%= student.email %></p>
-      <p><%= student.image_url %></p>
-    </div>
-  <% end %>
-</div>
-
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="js/bootstrap.js"></script>
+  <p>
+    <strong>Name:</strong>
+    <%= @student.name %>
+  </p>
+   
+  <p>
+    <strong>Nickname:</strong>
+    <%= @student.nickname %>
+  </p>
+  <p>
+    <strong>Email:</strong>
+    <%= @student.email %>
+  </p>
+   
+  <p>
+    <strong>Image Url:</strong>
+    <%= @student.image_url %>
+  </p>
+<div>

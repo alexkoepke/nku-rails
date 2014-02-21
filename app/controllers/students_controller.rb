@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   def index
+    @students = Student.all
   end
   
   def new
@@ -10,6 +11,10 @@ class StudentsController < ApplicationController
     
     @student.save
     redirect_to @student
+  end
+  
+  def show
+    @student = Student.find(params[:id])
   end
   
   private
