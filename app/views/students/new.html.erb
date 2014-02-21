@@ -23,10 +23,33 @@
 </div>
 
 <div class="container" id="content">
-  <h1>Students</h1>
-  <%= link_to "Sign Up!", controller: "students", class: 'btn btn-primary' %>
+  <h1>Sign Up!</h1>
   
+  <div>
+    <%= form_for :student, url: students_path do |f| %>
+      <div class="form-group">
+        <%= f.label :name, 'Name' %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+     
+      <div class="form-group">
+        <%= f.label :nickname, 'Nickname' %><br>
+        <%= f.text_field :nickname, class: 'form-control' %>
+      </div>
+        
+      <div class="form-group">
+        <%= f.label :email, 'Email' %><br>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :image_url, 'Image URL' %><br>
+        <%= f.text_field :image_url, class: 'form-control' %>
+      </div>
+     
+      <div class="form-actions">
+        <%= f.submit, class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="js/bootstrap.js"></script>
