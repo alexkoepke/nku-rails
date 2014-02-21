@@ -8,10 +8,17 @@ class StudentsController < ApplicationController
   end
   
   def create
-    @student = Student.new(student_params)
+    @student = Student.new(params[:student].permit(:name, :nickname, :email, :image_url))
     
-    @student.save
-    redirect_to @student
+    if @student.save
+      redirect_to @student
+    else
+      render 'new'
+    end
+  end
+  
+  def show
+    @student = Student.find(params[:id])
   end
   
   def edit

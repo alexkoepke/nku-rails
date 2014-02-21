@@ -28,11 +28,11 @@
   <div>
     <%= form_for :student, url: students_path do |f| %>
       
-      <% if @post.errors.any? %>
+      <% if @student.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+          <h2><%= pluralize(@student.errors.count, "error") %> prohibited this post from being saved:</h2>
           <ul>
-            <% @post.errors.full_messages.each do |msg| %>
+            <% @student.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
           </ul>

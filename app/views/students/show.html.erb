@@ -1,0 +1,46 @@
+<div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+       
+        <a href="./" class="navbar-brand">Alex Koepke</a>
+        
+        <button class="navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", controller: "welcome" %></li>
+            <li><%= link_to "My Blog", controller: "posts" %></li>
+            <li class="avtive"><%= link_to "Buller", controller: "students" %></li>
+          </ul>
+        
+        </div>
+        
+      </div>
+</div>
+
+<div class="container" id="content">
+  <p>
+    <strong>Name:</strong>
+    <%= @student.name %>
+  </p>
+   
+  <p>
+    <strong>Nickname:</strong>
+    <%= @student.nickname %>
+  </p>
+  <p>
+    <strong>Email:</strong>
+    <%= @student.email %>
+  </p>
+   
+  <p>
+    <strong>Image Url:</strong>
+    <%= @student.image_url %>
+  </p>
+<div>
+
+<%= link_to 'Cancel', students_path %>
