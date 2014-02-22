@@ -1,55 +1,32 @@
-<div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-       
-        <a href="./" class="navbar-brand">Alex Koepke</a>
-        
-        <button class="navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse navHeaderCollapse">
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", controller: "welcome" %></li>
-            <li><%= link_to "My Blog", controller: "posts" %></li>
-            <li class="avtive"><%= link_to "Buller", controller: "students" %></li>
-          </ul>
-        
-        </div>
-        
-      </div>
-</div>
+<%= render 'header' %>
 
 <div class="container" id="content">
   <div class="row">
-    
-    <div class="col-sm-6">
-      <h1>Students</h1>
-    </div>
-    
-    <div class="pull-right">
-      <%= link_to "Sign Up!", new_student_path, class: 'btn btn-primary' %>
+    <div class="page-header">
+        <h1 class="pull-left">Students</h1>
+        <div class="pull-right">
+          <div class="btn-group">
+          <%= link_to "Sign Up!", new_student_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
     </div>
   </div>
   
   <div class="row">
+    
     <div class="col-sm-4">
       <% @students.each do |student| %>
         <div class="info-block">
-          <p>Name: <%= student.name %></p>
-          <p>Nickname: <%= student.nickname %></p>
-          <p>Email: <%= student.email %></p>
-          <p>Image URL: <%= student.image_url %></p>
+          <p><strong>Name: </strong><%= student.name %></p>
+          <p><strong>Nickname: </strong><%= student.nickname %></p>
+          <p><strong>Email: </strong><%= student.email %></p>
+          <p><strong>Image Url: </strong><%= student.image_url %></p>
           <p><%= link_to 'Show', student %></p>
           <p><%= link_to 'Edit', edit_student_path(student) %></p>
+          <p><%= link_to 'Drop Class', student_path(student), method: :delete, data: { confirm: 'Are you sure?' } %></p>
         </div>
         <hr>
       <% end %>
     </div>
   </div>
 </div>
-
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="js/bootstrap.js"></script>

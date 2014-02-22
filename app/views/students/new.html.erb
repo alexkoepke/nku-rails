@@ -1,68 +1,18 @@
-<div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-       
-        <a href="./" class="navbar-brand">Alex Koepke</a>
-        
-        <button class="navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse navHeaderCollapse">
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", controller: "welcome" %></li>
-            <li><%= link_to "My Blog", controller: "posts" %></li>
-            <li class="avtive"><%= link_to "Buller", controller: "students" %></li>
-          </ul>
-        
-        </div>
-        
-      </div>
-</div>
+<%= render 'header' %>
 
 <div class="container" id="content">
-  <h1>Sign Up!</h1>
   
-  <div>
-    <%= form_for :student, url: students_path do |f| %>
-      
-      <% if @student.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@student.errors.count, "error") %> prohibited this post from being saved:</h2>
-          <ul>
-            <% @student.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    
-      <div class="form-group">
-        <%= f.label :name, 'Name' %><br>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
-     
-      <div class="form-group">
-        <%= f.label :nickname, 'Nickname' %><br>
-        <%= f.text_field :nickname, class: 'form-control' %>
-      </div>
-        
-      <div class="form-group">
-        <%= f.label :email, 'Email' %><br>
-        <%= f.text_field :email, class: 'form-control' %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.label :image_url, 'Image URL' %><br>
-        <%= f.text_field :image_url, class: 'form-control' %>
-      </div>
-     
-      <div class="form-actions">
-        <%= f.submit %>
-      </div>
-    <% end %>
-    <%= link_to 'Cancel', students_path %>
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>Sign Up!</h1>
+    </div>    
   </div>
+  
+  <div class="row">
+    <div>
+      <%= render 'form' %>
+      <%= link_to 'Cancel', students_path %>
+    </div>
+  </div>
+  
 </div>

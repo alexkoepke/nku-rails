@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
   
   def create
     @student = Student.new(params[:student].permit(:name, :nickname, :email, :image_url))
-    
+    session[:student_id] = @student.id
     if @student.save
       redirect_to @student
     else
@@ -33,6 +33,13 @@ class StudentsController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+    
+    redirect_to students_path
   end
   
   private
