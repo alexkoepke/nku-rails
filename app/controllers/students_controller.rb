@@ -29,7 +29,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     
     if @student.update(params[:student].permit(:name, :nickname, :email, :image_url))
-      redirect_to students_path, notice: "#{@student.name}, you successfuly updated your profile!"
+      redirect_to students_path, notice: "#{@student.nickname}, you successfuly updated your profile!"
     else
       render 'edit'
     end
