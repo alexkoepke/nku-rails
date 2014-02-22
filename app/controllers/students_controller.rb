@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
     @student = Student.new(params[:student].permit(:name, :nickname, :email, :image_url))
     session[:student_id] = @student.id
     if @student.save
-      redirect_to @student
+      redirect_to students_path, notice: "Hi #{@student.name}. Welcome to Bueller!"
     else
       render 'new'
     end
