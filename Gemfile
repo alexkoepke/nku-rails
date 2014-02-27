@@ -17,17 +17,20 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass'
 
-group :production, :staging do
-  gem "pg"
-end
-
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  
   gem 'byebug'
 end
 
 group :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+  gem 'uglifier'
 end
