@@ -1,24 +1,20 @@
 <%= render 'header' %>
 
 <div class="container" id="content">
-  <p>
-    <strong>Name:</strong>
-    <%= @student.name %>
-  </p>
-   
-  <p>
-    <strong>Nickname:</strong>
-    <%= @student.nickname %>
-  </p>
-  <p>
-    <strong>Email:</strong>
-    <%= @student.email %>
-  </p>
-   
-  <p>
-    <strong>Image Url:</strong>
-    <%= @student.image_url %>
-  </p>
+  
+  
+  <div class="row">
+      <div class="col-sm-7 student-profile">
+          
+            <div class="avatar pull-left" style='background-image: url(<%= avatar_url(@student) %>)'></div>
+            <div class="student">
+              <p><strong><%= @student.name %></strong></p>
+              <p><strong>Nickname: </strong><%= @student.nickname %></p>
+              <p><strong>Email: </strong><%= @student.email %></p>
+            </div>
+         
+        </div>
+    </div>
 <div>
 
 <%= link_to 'Back', students_path %>
