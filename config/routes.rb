@@ -7,6 +7,7 @@ NkuRails::Application.routes.draw do
   resources :sessions
   
   get "sign_out", to: "sessions#destroy"
+  post 'login', to: "sessions#create"
 
   root "welcome#index"
 end
