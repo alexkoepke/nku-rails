@@ -17,6 +17,10 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass'
 
+group :production, :staging do
+  gem "pg"
+end
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
