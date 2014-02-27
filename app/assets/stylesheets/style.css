@@ -7,3 +7,20 @@
   padding-bottom: 9px;
   margin: -20px 0 20px;
   border-bottom: 0px; }
+
+.avatar {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 20px; }
+
+.student {
+  display: block;
+  float: left;
+  margin-left: 20px; }
+
+.student-profile {
+  margin-bottom: 20px;
+  background-color:#eeeeee; }

@@ -11,27 +11,27 @@
         <h1 class="pull-left">Students</h1>
         <div class="pull-right">
           <div class="btn-group">
-          <%= link_to "Sign Up!", new_student_path, class: 'btn btn-primary' %>
+            <%= link_to "Sign In!", new_session_path, class: 'btn btn-primary' %><%= link_to "Sign Up!", new_student_path, class: 'btn btn-primary' %><%= link_to "Sign Out!", students_path, class: 'btn btn-primary' %>
           </div>
         </div>
     </div>
   </div>
   
-  <div class="row">
-    
-    <div class="col-sm-4">
-      <% @students.each do |student| %>
-        <div class="info-block">
-          <p><strong>Name: </strong><%= student.name %></p>
-          <p><strong>Nickname: </strong><%= student.nickname %></p>
-          <p><strong>Email: </strong><%= student.email %></p>
-          <p><strong>Image Url: </strong><%= student.image_url %></p>
-          <p><%= link_to 'Show', student %></p>
-          <p><%= link_to 'Edit', edit_student_path(student) %></p>
-          <p><%= link_to 'Drop Class', student_path(student), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  
+  <% @students.each do |student| %>
+    <div class="row">
+      <div class="col-sm-7 student-profile">
+          
+            <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'></div>
+            <div class="student">
+              <p><strong>Name: </strong><%= student.name %></p>
+              <p><strong>Nickname: </strong><%= student.nickname %></p>
+              <p><strong>Email: </strong><%= student.email %></p>
+              <p><%= link_to 'Show', student %>, <%= link_to 'Edit', edit_student_path(student) %>, <%= link_to 'Drop Class', student_path(student), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            </div>
+         
         </div>
-        <hr>
-      <% end %>
     </div>
-  </div>
+  <% end %>
+  
 </div>

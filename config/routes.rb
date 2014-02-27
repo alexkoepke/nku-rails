@@ -4,6 +4,9 @@ NkuRails::Application.routes.draw do
   end
   
   resources :students
+  resources :sessions
+  
+  get "sign_out", to: "sessions#destroy"
 
   root "welcome#index"
 end
