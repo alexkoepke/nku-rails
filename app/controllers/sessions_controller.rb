@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @student = Student.find_by_email(params[:email])
-    if @student && @student.authenticate(params[:password])
+    @student = Student.find_by_email(params[:session][:email])
+    if @student && @student.authenticate(params[:session][:password])
       session[:student_id] = @student.id
       redirect_to students_path, notice: "Logged in!"
     else
