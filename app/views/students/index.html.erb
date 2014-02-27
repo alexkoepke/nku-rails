@@ -11,7 +11,14 @@
         <h1 class="pull-left">Students</h1>
         <div class="pull-right">
           <div class="btn-group">
-            <%= link_to "Sign In!", new_session_path, class: 'btn btn-primary' %><%= link_to "Sign Up!", new_student_path, class: 'btn btn-primary' %><%= link_to "Sign Out!", students_path, class: 'btn btn-primary' %>
+            <% if current_student %>
+              <%= link_to 'Edit', edit_student_path(current_student), class: 'btn btn-primary' %>
+              <%= link_to "Sign Out!", sign_out_path, class: 'btn btn-primary' %>
+              <%= link_to 'Drop Class', student_path(current_student), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+            <% else %>
+              <%= link_to "Sign In!", new_session_path, class: 'btn btn-primary' %>
+              <%= link_to "Sign Up!", new_student_path, class: 'btn btn-primary' %>
+            <% end %>
           </div>
         </div>
     </div>
