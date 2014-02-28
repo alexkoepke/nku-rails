@@ -10,8 +10,10 @@
   border-bottom: 0px; }
 
 .avatar {
-  height: 150px;
-  width: 150px;
+  border-radius: 50%;
+  behavior: url(PIE.htc);
+  height: 120px;
+  width: 120px;
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: contain;

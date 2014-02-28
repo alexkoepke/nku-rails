@@ -22,7 +22,7 @@
                     <p>
                     <%= render 'form' %>
                     </p>
-                    <p><%= link_to 'Back', students_path, class: 'btn btn-primary' %> | <%= link_to 'Drop Class', student_path(current_student), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %></p>
+                    <p><%= link_to 'Drop Class', student_path(current_student), method: :delete, data: { confirm: 'Are you sure?' } %></p>
                   </div>
                 </div>
               

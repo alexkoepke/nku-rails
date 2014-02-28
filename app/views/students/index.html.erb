@@ -13,7 +13,7 @@
         <div class="pull-right">
           <div class="btn-group">
             <% if current_student %>
-            <%= link_to "I'm here!", new_attendance_path(current_student), class: 'btn btn-primary' %>
+              <%= link_to "I'm here!", new_attendance_path(current_student), class: 'btn btn-primary' %>
               <%= link_to 'Edit', edit_student_path(current_student), class: 'btn btn-primary' %>
               <%= link_to "Sign Out!", sign_out_path, class: 'btn btn-primary' %>
             <% else %>
