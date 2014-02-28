@@ -1,4 +1,5 @@
 .btn-group{
+    width: 100%;
     bottom: 15px;
     position: relative;
     top: 15px; }
@@ -24,3 +25,15 @@
 .student-profile {
   margin-bottom: 20px;
   background-color:#eeeeee; }
+
+table.seatsTable{
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  background-color:#eeeeee;
+  margin: 10px 0 0 0; }
+
+td.seatsTable{
+  text-align: center;
+  background-color:#eeeeee;
+  border: 2px solid white; }
