@@ -1,0 +1,27 @@
+<%= form_for @attendance do |f| %>
+        <% if @attendance.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@attendance.errors.count, "error") %> prohibited this post from being saved:
+            </h2>
+            <ul>
+              <% @attendance.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      
+        <div class="row">
+          <div class="form-group col-sm-4">
+            <%= f.label :seat, 'Where will you be sitting to day?' %><br>
+            <%= f.text_field :seat, class: 'form-control' %>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="form-actions col-sm-4">
+            <%= f.submit %>
+          </div>
+        </div>
+<% end %>

@@ -11,9 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228150317) do
+ActiveRecord::Schema.define(version: 20140228155638) do
 
   create_table "attendances", force: true do |t|
+    t.string "seat"
   end
 
   create_table "comments", force: true do |t|
