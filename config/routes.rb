@@ -5,6 +5,7 @@ NkuRails::Application.routes.draw do
   
   resources :students
   resources :sessions
+  resources :attendances
   
   get "sign_out", to: "sessions#destroy"
   post 'login', to: "sessions#create"
