@@ -1,2 +1,45 @@
 <%= render 'header' %>
-<h1>Index</h1>
+<div class="container" id="content">
+  
+  <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+              <%= value %>
+        </div>
+  <% end %>
+  
+  <div class="row">
+    <div class="page-header">
+        
+        <h1 class="pull-left">Attendances</h1>
+        
+        <div class="pull-right">
+          <div class="btn-group">
+            <% if current_student %>
+              <%= link_to 'Edit', edit_student_path(current_student), class: 'btn btn-primary' %>
+              <%= link_to "Sign Out!", sign_out_path, class: 'btn btn-primary' %>
+            <% else %>
+              <%= link_to "Sign In!", new_session_path, class: 'btn btn-primary' %>
+              <%= link_to "Sign Up!", new_student_path, class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  
+  <% @attendances.each do |attendance| %>
+    <div class="row">
+      <div class="col-sm-7 student-profile">
+          
+            <div class="avatar pull-left" style='background-image: url(<%= avatar_url(attendance.student) %>)'></div>
+            <div class="student">
+              <p><strong><%= attendance.student.name %></strong></p>
+              <p><strong>Date: </strong><%= attendance.attended_on %></p>
+              <p><strong>Seat: </strong><%= attendance.seat %></p>
+            </div>
+         
+        </div>
+    </div>
+  <% end %>
+  
+</div>

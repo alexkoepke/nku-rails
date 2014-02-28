@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
     if @student.save
       redirect_to students_path, notice: "Hi #{@student.name}. Welcome to Bueller!"
     else
+      flash[:error] = "Shits borke!"
       render 'new'
     end
   end
