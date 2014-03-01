@@ -26,20 +26,55 @@
     </div>
   </div>
   
-  <div class="seatsTable">
-    <table class="seatsTable">
-      <tr class="seatsTable">
-        <td class="seatsTable">1</td>
-        <td class="seatsTable">2</td>
-      </tr>
-      <tr class="seatsTable">
-        <td class="seatsTable">3</td>
-        <td class="seatsTable">4</td>
-      </tr>
-    </table>
+  <div class="row">
+    
+    <div class="seatsTable">
+      <table class="seatsTable">
+        <tr class="seatsTable">
+          <td class="seatsTable">
+            <% @students.in_seat(1).each do |student| %>
+              <div>
+                <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'>
+                <div class="name-here"><%= student.nickname %></div></div>  
+                
+              </div>
+            <% end %>
+          </td>
+          <td class="seatsTable">
+            <% @students.in_seat(2).each do |student| %>
+              <div>
+                <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'>
+                <div class="name-here"><%= student.nickname %></div></div>  
+                
+              </div>
+            <% end %>
+          </td>
+        </tr>
+        <tr class="seatsTable">
+          <td class="seatsTable">
+            <% @students.in_seat(3).each do |student| %>
+              <div>
+                <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'>
+                <div class="name-here"><%= student.nickname %></div></div>  
+                
+              </div>
+            <% end %>
+          </td>
+          <td class="seatsTable">
+            <% @students.in_seat(4).each do |student| %>
+              <div>
+                <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'>
+                <div class="name-here"><%= student.nickname %></div></div>  
+                
+              </div>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+     </div>
   </div>
   
-  <% @students.each do |student| %>
+  <% @students.absent.each do |student| %>
     <div class="row">
       <div class="col-sm-7 student-profile">
           

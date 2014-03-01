@@ -1,38 +1,24 @@
 <%= render 'header' %>
 
-<div class="container" id="content">
-  
+<div class="container" id="content">  
   <div class="row">
-    <div class="page-header">
-      <h1 class="pull-left">Edit Profile</h1>
-      
-      <div class="pull-right">
+    <% if current_student == @student %>
+      <div class="page-header clearfix">
+        <h1 class="pull-left">Edit Profile</h1>
+        
+        <div class="pull-right">
           <div class="btn-group">
-            <% if current_student == @student %>
-              <%= link_to "I'm here!", new_attendance_path(current_student), class: 'btn btn-primary' %>
-              <%= link_to "Sign Out!", sign_out_path, class: 'btn btn-primary' %>
-                          </div>
-                      </div>
-                    
-                  </div>    
-                </div>
-                
-                <div class="row">
-                  <div>
-                    <p>
-                    <%= render 'form' %>
-                    </p>
-                    <p><%= link_to 'Drop Class', student_path(current_student), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-                  </div>
-                </div>
-              
-              </div>
-            <% else %>
-                        </div>
-                      </div>
-                    
-                  </div>    
-                </div>
-                <h1> You are not who you say you are!</h1>
-            <% end %>
+            <%= link_to "I'm here!", new_attendance_path(current_student), class: 'btn btn-primary' %>
+            <%= link_to "Sign Out!", sign_out_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    
+      <p><%= render 'form' %></p>
+      <p><%= link_to 'Drop Class', student_path(current_student), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% else %>
+      <h1> You are not who you say you are!</h1>
+    <% end %>
+  </div>
+</div><!-- end container -->
           

@@ -30,12 +30,12 @@
 
 div.seatsTable{
   width: 100%;
-  height: 100px;
+  height: 100%;
   margin: 10px 10px 10px 10px; }
 
 table.seatsTable{
   width: 100%;
-  height: 100px;
+  height: 100%;
   text-align: center;
   background-color:#eeeeee;
   margin: 10px 0 0 0; }
@@ -44,3 +44,8 @@ td.seatsTable{
   text-align: center;
   background-color:#eeeeee;
   border: 2px solid white; }
+
+div.name-here{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align:center; }
