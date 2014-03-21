@@ -9,8 +9,8 @@ class StudentsController < ApplicationController
   
   def create
     @student = Student.new(params[:student].permit(:name, :nickname, :email, :image_url, :password, :password_confirmation))
-    session[:student_id] = @student.id
     if @student.save
+      session[:student_id] = @student.id
       redirect_to students_path, notice: "Hi #{@student.name}. Welcome to Bueller!"
     else
       flash[:error] = "Shits borke!"
