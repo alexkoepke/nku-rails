@@ -28,7 +28,7 @@
   
   <div class="row">
     <div class="pull-right">
-      <%= form_tag students_path, method: :get, class: "form-inline" do %>
+      <%= form_tag root_path, method: :get, class: "form-inline" do %>
         
         <label>Date</label>
         
@@ -46,7 +46,7 @@
       <table class="seatsTable">
         <tr class="seatsTable">
           <td class="seatsTable">
-            <% @students.in_seat(1, @date).each do |student| %>
+            <% @students.in_seat(1).each do |student| %>
               <div>
                 <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'>
                 <div class="name-here"><%= student.nickname %></div></div>  
@@ -55,7 +55,7 @@
             <% end %>
           </td>
           <td class="seatsTable">
-            <% @students.in_seat(2, @date).each do |student| %>
+            <% @students.in_seat(2).each do |student| %>
               <div>
                 <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'>
                 <div class="name-here"><%= student.nickname %></div></div>  
@@ -66,7 +66,7 @@
         </tr>
         <tr class="seatsTable">
           <td class="seatsTable">
-            <% @students.in_seat(3, @date).each do |student| %>
+            <% @students.in_seat(3).each do |student| %>
               <div>
                 <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'>
                 <div class="name-here"><%= student.nickname %></div></div>  
@@ -75,7 +75,7 @@
             <% end %>
           </td>
           <td class="seatsTable">
-            <% @students.in_seat(4, @date).each do |student| %>
+            <% @students.in_seat(4).each do |student| %>
               <div>
                 <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'>
                 <div class="name-here"><%= student.nickname %></div></div>  
