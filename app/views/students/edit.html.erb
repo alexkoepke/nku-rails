@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= render 'header' %>
 
 <div class="container" id="content">  
@@ -22,3 +23,15 @@
   </div>
 </div><!-- end container -->
           
+=======
+<div class="page-header">
+  <div class="row">
+    <h1 class="col-sm-8">Edit this student</h1>
+      <div class="col-sm-8">
+        <%= link_to 'Home', students_path, class: 'btn btn-default pull-left' %>
+      </div>
+  </div>
+</div>
+<%= render partial: 'form', locals: {submit_copy: 'Update this student'} %>
+
+>>>>>>> 5f65be8be2389aa9f73c42687bf21df2173839c4

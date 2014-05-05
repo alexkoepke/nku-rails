@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= form_for @student do |f| %>
         <% if @student.errors.any? %>
           <div id="error_explanation">
@@ -54,3 +55,42 @@
           </div>
         </div>
       <% end %>
+=======
+<div class="row col-sm-6">
+  <%= form_for @student do |f| %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :nickname, 'Nickname' %>
+      <%= f.text_field :nickname, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image_url, 'Image URL' %>
+      <%= f.text_field :image_url, class: 'form-control' %>
+    </div>
+
+    <%= f.submit submit_copy, class: 'btn btn-primary' %>
+    &nbsp;or
+    <%= link_to 'Cancel', students_path %>
+  <% end %>
+</div>
+>>>>>>> 5f65be8be2389aa9f73c42687bf21df2173839c4

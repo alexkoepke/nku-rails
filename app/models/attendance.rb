@@ -1,4 +1,5 @@
 class Attendance < ActiveRecord::Base
+<<<<<<< HEAD
   belongs_to :student
   
   validates :attended_on, uniqueness: { scope: :student,
@@ -12,3 +13,6 @@ class Attendance < ActiveRecord::Base
   
   
 end
+=======
+end
+>>>>>>> 5f65be8be2389aa9f73c42687bf21df2173839c4

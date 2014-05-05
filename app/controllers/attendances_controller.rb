@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+<<<<<<< HEAD
   def new
     @attendance = Attendance.new
   end
@@ -24,4 +25,25 @@ class AttendancesController < ApplicationController
     @attendances = Attendance.all
   end
   
+=======
+  
+  def index
+    @attendance = Attendance.new
+  end
+  
+  def news
+  end
+  
+  def create
+    @student = current_student
+    if @student
+      redirect_to attendances_path, notice: 'Here!'
+    else 
+      redirect_to students_path, notice: 'You have to login'
+    end
+  end
+  
+  def edit
+  end
+>>>>>>> 5f65be8be2389aa9f73c42687bf21df2173839c4
 end
