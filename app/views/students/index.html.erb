@@ -87,20 +87,20 @@
       </table>
      </div>
   </div>
-  
-  <% @students.absent.each do |student| %>
-    <div class="row">
-      <div class="col-sm-7 student-profile">
-          
-            <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'></div>
-            <div class="student">
-              <p><strong><%= link_to student.name, student %></strong></p>
-              <p><strong>Nickname: </strong><%= student.nickname %></p>
-              <p><strong>Email: </strong><%= student.email %></p>
-            </div>
-         
-        </div>
-    </div>
-  <% end %>
-  
+  <div class="row">
+    <% @students.absent.each do |student| %>
+      <div class="row">
+        <div class="col-sm-7 student-profile">
+            
+              <div class="avatar pull-left" style='background-image: url(<%= avatar_url(student) %>)'></div>
+              <div class="student">
+                <p><strong><%= link_to student.name, student %></strong></p>
+                <p><strong>Nickname: </strong><%= student.nickname %></p>
+                <p><strong>Email: </strong><%= student.email %></p>
+              </div>
+           
+          </div>
+      </div>
+    <% end %>
+  </div>
 </div>
